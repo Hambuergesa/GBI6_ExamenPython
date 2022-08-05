@@ -1,9 +1,8 @@
 # NOMBRE: García, Lucía
-def download_pubmed(palabra = "dengue"):
+def download_pubmed(palabra = "p"):
     """
     Docstring download_pubmed
-    p; WeyWord1 → Palabra Clave para la busqueda
-    l; WeyWord2 → Palabra Clave para la busqueda
+    p; keyword →palabra clave para realizar la busqueda
     """
     from Bio import Entrez
     import re
@@ -36,33 +35,24 @@ def download_pubmed(palabra = "dengue"):
 
 
 
-def mapscience(       ):
+def mapscience(pais= "nombre" ):
     """
     Docstring map_science
-    
-    
-    
-    
-    
-    
+    nombre; pais → nombre del pais del numero de autores 
     
     """
+    import matplotlib.pyplot as plt
     
+    paises = ['USA','Rusia', 'China']
+    valores = [(conut,46,88,55]
+    colores = ['cyan','green','coral','yellow']
     
+    plt.pie(x=valores, labels=etiquetas, colors = colores, autopct='%1.2f%%')
     
+    plt.title('Porcentajes de coches')
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    plt.show()
+
     
     
     return 
