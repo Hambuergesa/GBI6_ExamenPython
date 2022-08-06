@@ -32,13 +32,19 @@ def download_pubmed(palabra = "p"):
     out_handle.close() #cierro esta data
     return data
 
-def science_plots(pais = 'p'):
-    """Funcion para mapear la cantidad de articulos escritos en un determinado lugar, 
-    sobre los datos obtenidos en la funcion download_pubmed"""
-    data = pais+".txt"
+def science_plots(archivo = 'a'):
+    """
+    a; nombre del archivo que se quiere graficar
+    """
     import re
-    with open(data) as f:
-        text = f.read()
-        pais = input('Introduce el nombre del país')
-        print('El país', 'p', 'se encuentra', len('p'), 'veces'.format(word, "" if re.search(word, text, re.IGNORECASE) else " no"))
+    import csv
+    f = open(archivo)
+    text = f.read()
+    text = re.sub(r'\n\s{6}', ' ', text)
+    zipcodes = re.findall(r'[A-Z]{2}\s(\d{5})', text)
+    frecuenciaPalab = []
+    for w in zipcodes:
+        frecuenciaPalab.append(zipcodes.count(w))
+    resul= frecuenciaPalab.sort()
+    print(Counter('resul').most_common(5))
     return
