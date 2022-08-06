@@ -30,4 +30,15 @@ def download_pubmed(palabra = "p"):
     handle.close()
     out_handle.write(data) #escribo esta data
     out_handle.close() #cierro esta data
-    return 
+    return data
+
+def science_plots(pais = 'p'):
+    """Funcion para mapear la cantidad de articulos escritos en un determinado lugar, 
+    sobre los datos obtenidos en la funcion download_pubmed"""
+    data = pais+".txt"
+    import re
+    with open(data) as f:
+        text = f.read()
+        pais = input('Introduce el nombre del país')
+        print('El país', 'p', 'se encuentra', len('p'), 'veces'.format(word, "" if re.search(word, text, re.IGNORECASE) else " no"))
+    return
