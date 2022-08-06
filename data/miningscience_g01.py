@@ -304,5 +304,5 @@ def science_plots(archivo = "a"):
     plt.pie(frecuenciaPalab,labels=zipcodes)
     plt.show
     nombre=archivo+'.jpg'
-    fig.savefig(nombre, dpi = 300)
+    fig.savefig(C:/Users/MY PC/Documents/GBI6_ExamenPython/img/nombre, dpi = 300)
     return
